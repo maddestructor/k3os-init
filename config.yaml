@@ -47,4 +47,3 @@ k3os:
     node-type: high-power
   k3s_args:
   - server
-  - "--disable-agent"
