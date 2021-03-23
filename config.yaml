@@ -1,0 +1,50 @@
+ssh_authorized_keys:
+- github:maddestructor
+write_files:
+- encoding: ""
+  content: |-
+    #!/bin/bash
+    echo hello, local service start
+  owner: root
+  path: /etc/local.d/example.start
+  permissions: '0755'
+- path: /etc/conf.d/qemu-guest-agent
+  content: |-
+    GA_PATH=/dev/vport2p1
+  owner: root
+  permissions: '0644'
+hostname: Kenobi
+# init_cmd:
+# - "echo hello, init command"
+# boot_cmd:
+# - "echo hello, boot command"
+# run_cmd:
+# - "echo hello, run command"
+
+k3os:
+  data_sources:
+  - cdrom
+  modules:
+  - kvm
+  - nvme
+  sysctl:
+    kernel.printk: "4 4 1 7"
+    kernel.kptr_restrict: "1"
+  dns_nameservers:
+  - 192.168.1.1
+  - 1.1.1.1
+  - 1.0.0.1
+  ntp_servers:
+  - 0.ca.pool.ntp.org
+  - 1.ca.pool.ntp.org
+  - 2.ca.pool.ntp.org
+  - 3.ca.pool.ntp.org
+  password: "$1$zhUmt.MP$10SoVsEpxoRElw7zmJkPY/"
+  # server_url: https://someserver:6443
+  # token: TOKEN_VALUE
+  labels:
+    load-type: services
+    node-type: high-power
+  k3s_args:
+  - server
+  - "--disable-agent"
