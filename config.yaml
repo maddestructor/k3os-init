@@ -1,18 +1,18 @@
 ssh_authorized_keys:
-- github:maddestructor
+  - github:maddestructor
 write_files:
-- path: /var/lib/connman/default.config
-  content: |-
-    [service_eth0]
-    Type=ethernet
-    IPv4=192.168.1.220/255.255.192.0/192.168.1.1
-    IPv6=off
-    Nameservers=192.168.1.1/1.1.1.1/1.0.0.1
-- path: /etc/conf.d/qemu-guest-agent
-  content: |-
-    GA_PATH=/dev/vport2p1
-  owner: root
-  permissions: '0644'
+  - path: /var/lib/connman/default.config
+    content: |-
+      [service_eth0]
+      Type=ethernet
+      IPv4=192.168.1.220/255.255.192.0/192.168.1.1
+      IPv6=off
+      Nameservers=192.168.1.1/1.1.1.1/1.0.0.1
+  - path: /etc/conf.d/qemu-guest-agent
+    content: |-
+      GA_PATH=/dev/vport2p1
+    owner: root
+    permissions: '0644'
 hostname: Kenobi
 # init_cmd:
 # - "echo hello, init command"
@@ -23,22 +23,22 @@ hostname: Kenobi
 
 k3os:
   data_sources:
-  - cdrom
+    - cdrom
   modules:
-  - kvm
-  - nvme
+    - kvm
+    - nvme
   sysctl:
     kernel.printk: "4 4 1 7"
     kernel.kptr_restrict: "1"
   dns_nameservers:
-  - 192.168.1.1
-  - 1.1.1.1
-  - 1.0.0.1
+    - 192.168.1.1
+    - 1.1.1.1
+    - 1.0.0.1
   ntp_servers:
-  - 0.ca.pool.ntp.org
-  - 1.ca.pool.ntp.org
-  - 2.ca.pool.ntp.org
-  - 3.ca.pool.ntp.org
+    - 0.ca.pool.ntp.org
+    - 1.ca.pool.ntp.org
+    - 2.ca.pool.ntp.org
+    - 3.ca.pool.ntp.org
   password: "$6$7wJTAXrn$etE7WNjuVcRIHgjwo8L2Mq3QCx3GG0R0GWuOdkbURu0Xg8KGC8RGiqzd4O9ZrMdCHWR8dI7jJ8IUnEluwb7U71"
   # server_url: https://someserver:6443
   # token: TOKEN_VALUE
@@ -46,4 +46,4 @@ k3os:
     load-type: services
     node-type: high-power
   k3s_args:
-  - server
+    - server
