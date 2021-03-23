@@ -39,7 +39,7 @@ k3os:
   - 1.ca.pool.ntp.org
   - 2.ca.pool.ntp.org
   - 3.ca.pool.ntp.org
-  password: "$1$zhUmt.MP$10SoVsEpxoRElw7zmJkPY/"
+  password: "$6$7wJTAXrn$etE7WNjuVcRIHgjwo8L2Mq3QCx3GG0R0GWuOdkbURu0Xg8KGC8RGiqzd4O9ZrMdCHWR8dI7jJ8IUnEluwb7U71"
   # server_url: https://someserver:6443
   # token: TOKEN_VALUE
   labels:
