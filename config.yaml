@@ -1,13 +1,13 @@
 ssh_authorized_keys:
 - github:maddestructor
 write_files:
-- encoding: ""
+- path: /var/lib/connman/default.config
   content: |-
-    #!/bin/bash
-    echo hello, local service start
-  owner: root
-  path: /etc/local.d/example.start
-  permissions: '0755'
+    [service_eth0]
+    Type=ethernet
+    IPv4=192.168.1.220/255.255.192.0/192.168.1.1
+    IPv6=off
+    Nameservers=192.168.1.1/1.1.1.1/1.0.0.1
 - path: /etc/conf.d/qemu-guest-agent
   content: |-
     GA_PATH=/dev/vport2p1
