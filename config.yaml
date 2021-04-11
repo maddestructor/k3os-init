@@ -18,6 +18,7 @@ write_files:
 # init_cmd:
 # - "echo hello, init command"
 boot_cmd:
+- "ln -vs /usr/share/zoneinfo/America/Montreal /etc/localtime"
 - "echo America/Montreal > /etc/timezone"
 # run_cmd:
 # - "echo hello, run command"
